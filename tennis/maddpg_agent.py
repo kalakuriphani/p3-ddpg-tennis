@@ -81,8 +81,8 @@ class MADDPG(object):
         """Loads the checkpoint weight of MARL params"""
         if (isFinal):
             for i, agent in enumerate(self.agents):
-                agent.actor_local.load_state_dict(torch.load(f"../pytorch_models/final/actor_agent_{i}.pth"))
-                agent.critic_local.load_state_dict(torch.load(f"../pytorch_models/final/critic_agent_{i}.pth"))
+                agent.actor_local.load_state_dict(torch.load(f"./pytorch_models/final/actor_agent_{i}.pth"))
+                agent.critic_local.load_state_dict(torch.load(f"./pytorch_models/final/critic_agent_{i}.pth"))
         else:
             for i, agent in enumerate(self.agents):
                 agent.actor_local.load_state_dict(torch.load(f"../pytorch_models/checkpoint/actor_agent_{i}.pth"))
